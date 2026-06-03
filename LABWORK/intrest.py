@@ -2,12 +2,11 @@
 #input principal amount, rate of intrest and time in years
 principal = float(input("Enter the principal amount: "))
 rate = float(input("Enter the rate of intrest: "))
-time = float(input("Enter the time in years: "))
+time = int(input("Enter the time in years: "))
 #calculate simple intrest
-simple_intrest = (principal * rate * time) / 100
-#calculate compound intrest
-compound_intrest = principal * (1 + rate / 100) ** time - principal
-print("The simple intrest is:", simple_intrest)
-print("The compound intrest is:", compound_intrest)
-principal = principal + compound_intrest    
-print("The new principal amount is:", principal)
+if principal > 0 and rate >=0 and time >=0:
+    simple_intrest = (principal * rate * time) / 100
+    print("The simple intrest is:", simple_intrest)
+else:
+    print("Principal amount, rate of intrest and time cannot be negative")
+    print("Please enter valid inputs")
