@@ -47,21 +47,17 @@ print("Products Sold More Than 20 Times :")
 
 dict_items = list(sales.items())
 
-counter = 0
-
 for item in dict_items:
 
     if item[1] > 20:
         print(item[0])
     else:
         pass
-
-    counter += 1
+   
 
 #---------------------------------------------------
 # Find the best-selling product
 
-dict_items = list(sales.items())
 
 product_best = dict_items[0][0]
 best_sales = dict_items[0][1]
