@@ -55,8 +55,73 @@ print(dict_items)
 #-----------------------------------------------------------
 # Display cities having temperature above 40°C
 
+for item in dict_items:
 
-for i in range(len(dict_items)):
-    if dict_items[i][1] > 20:
-        print(dict_items[i][0])
-print()
+    if item[1] > 40:
+        print(item[0])
+    else:
+        pass
+
+#-----------------------------------------------------------
+
+# Find the hottest city
+
+hottest_city = dict_items[0][0]
+highest_temp = dict_items[0][1]
+
+for item in dict_items:
+    if item[1] > highest_temp:
+        hottest_city = item[0]
+        highest_temp = item[1]
+
+print("\nHottest City :", hottest_city, "---", highest_temp)
+
+# --------------------------------------------------
+# Find the coolest city
+
+coolest_city = dict_items[0][0]
+lowest_temp = dict_items[0][1]
+
+for item in dict_items:
+    if item[1] < lowest_temp:
+        coolest_city = item[0]
+        lowest_temp = item[1]
+
+print("\nCoolest City :", coolest_city, "---", lowest_temp)
+
+# --------------------------------------------------
+# Calculate average temperature
+
+total_temp = 0
+
+for item in dict_items:
+    total_temp += item[1]
+
+average_temp = total_temp / len(dict_items)
+
+print("\nAverage Temperature :", average_temp)
+
+# --------------------------------------------------
+# Create a list of pleasant cities
+
+pleasant_cities = []
+
+for item in dict_items:
+    if item[1] < 35:
+        pleasant_cities.append(item[0])
+
+print("\nPleasant Cities :")
+print(pleasant_cities)
+
+# --------------------------------------------------
+# Count cities with temperature between 35°C and 40°C
+
+count = 0
+
+for item in dict_items:
+    if item[1] >= 35 and item[1] <= 40:
+        count += 1
+    else:
+        pass
+
+print("\nCities With Temperature Between 35°C and 40°C :", count)
