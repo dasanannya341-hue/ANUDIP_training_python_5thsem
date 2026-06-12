@@ -138,3 +138,4 @@ else:
     percentage = 0
 
 print("Occupancy Percentage:", round(percentage, 1), "%")
+
